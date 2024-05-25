@@ -1,0 +1,17 @@
+; only supports SSA (https://en.wikipedia.org/wiki/Static_single-assignment_form) atm
+; run with `n=50 fizzbuzz`
+m3 = range(3, n, 3)
+m5 = range(5, n, 5)
+r = range(1, n, 1)
+m15 = intersection(m3, m5)
+m3n5 = subtraction(m3, m5)
+m5n3 = subtraction(m5, m3)
+m3m5 = union(m3, m5)
+n3n5 = subtraction(r, m3m5)
+fb = prepend("FizzBuzz", m15)
+n = prepend("Nothing", n3n5)
+f = prepend("Fizz", m3n5)
+b = prepend("Buzz", m5n3)
+fb_n = union(fb, n)
+f_b = union(f, b)
+fizzbuzz = union(fb_n, f_b)
