@@ -1,6 +1,5 @@
-; For references see https://github.com/passy/awesome-recursion-schemes
-; For my typed Scala implementation see https://github.com/Adam-Vandervorst/RecursionSchemes
-!(transfer! "base.metta")
+(= (unFix (Fix $x)) $x)
+(= (identity $x) $x)
 
 ; folds
 (= ((cata $F $alg) $a) ($alg ($F (cata $F $alg) (unFix $a))))
